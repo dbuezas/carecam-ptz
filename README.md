@@ -41,6 +41,17 @@ current settings are read back from the camera, so entity states are real.
 3. Enter the camera **host/IP** and its **owner token** (see below). RTSP
    username / password / port default to `admin` / `admin123456` / `8554`.
 
+### RTSP username / password
+
+Video uses the camera's built‑in RTSP server. Its login is a **firmware
+default baked into the camera** — it is **not** in the app or the diagnostics
+export. On this model (YGT `AJL33PQ0866`) it is `admin` / `admin123456`, which
+the integration pre‑fills. **Other models in this family use different hardcoded
+RTSP passwords**, so if video fails, the credentials are the likely cause — try
+known defaults for your model, or check `rtsp://<user>:<pass>@<ip>:8554/profile0`
+in VLC to confirm before entering them here. (PTZ, settings, TTS etc. do **not**
+use these — they use the owner token.)
+
 ### Getting the owner token
 
 Local login uses the camera's *owner token* — the credential the app receives
