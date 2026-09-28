@@ -41,13 +41,25 @@ current settings are read back from the camera, so entity states are real.
 3. Enter the camera **host/IP** and its **owner token** (see below). RTSP
    username / password / port default to `admin` / `admin123456` / `8554`.
 
-### The owner token
+### Getting the owner token
 
 Local login uses the camera's *owner token* — the credential the app receives
-when the account is bound to the camera. There is no cloud‑free way to mint it,
-so for now you extract it once from the app's stored config
-(`groupcfg.db` → `OwnerToken`). A future version could fetch it via a one‑time
-cloud login.
+when the account is bound to the camera. You get it once from the app's own
+**log / diagnostics export**:
+
+1. In the **CareCam Pro** (Huiyun) app, open the device and trigger the log
+   export / feedback‑with‑logs feature (it collects the device's config and
+   logs into an archive you can share/save — e.g. a `log.tar.gz`).
+2. Open the archive and find **`groupcfg.db`** (under `SDKFlashLog/ZJCONF/config/`).
+   Despite the `.db` name it is plain **JSON**.
+3. Copy the value of **`"OwnerToken"`** (a ~32‑character string). Paste it into
+   the integration's *Owner token* field.
+
+The same archive also confirms the camera's local IP and DID if you need them.
+
+> Why manual: the token is normally issued by the vendor cloud at pairing time.
+> There is no cloud‑free way to mint it, so it's extracted once. A future version
+> could fetch it automatically via a one‑time cloud login.
 
 ## Notes
 
