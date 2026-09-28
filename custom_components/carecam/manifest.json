@@ -1,0 +1,18 @@
+{
+  "domain": "carecam",
+  "name": "CareCam (Huiyun/YGTek local)",
+  "codeowners": [
+    "@dbuezas"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "stream",
+    "ffmpeg",
+    "media_source"
+  ],
+  "documentation": "https://github.com/dbuezas/carecam-ptz",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": [],
+  "version": "0.1.0"
+}

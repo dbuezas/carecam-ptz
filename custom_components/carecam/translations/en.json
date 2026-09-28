@@ -1,0 +1,144 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "CareCam camera",
+        "description": "Local control for CareCam / Huiyun / YGTek cameras. The OwnerToken comes from the camera's app account binding.",
+        "data": {
+          "name": "Name",
+          "host": "Host or IP address",
+          "owner_token": "Owner token",
+          "rtsp_user": "RTSP username",
+          "rtsp_pass": "RTSP password",
+          "rtsp_port": "RTSP port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not log in to the camera locally. Check the address and owner token."
+    },
+    "abort": {
+      "already_configured": "This camera is already added."
+    }
+  },
+  "entity": {
+    "select": {
+      "lens": {
+        "name": "Lens",
+        "state": {
+          "wide": "Wide",
+          "tele": "Tele (zoom)"
+        }
+      },
+      "night_vision": {
+        "name": "Night vision",
+        "state": {
+          "auto": "Auto",
+          "auto_no_lamp": "Auto (no lamp)",
+          "full_color": "Full colour",
+          "natural": "Natural",
+          "infrared": "Infrared"
+        }
+      },
+      "orientation": {
+        "name": "Image orientation",
+        "state": {
+          "normal": "Normal",
+          "flip": "Flip",
+          "mirror": "Mirror",
+          "flip_mirror": "Flip + mirror"
+        }
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "Speaker volume"
+      },
+      "ptz_speed": {
+        "name": "PTZ speed"
+      },
+      "ptz_step": {
+        "name": "PTZ step"
+      }
+    },
+    "switch": {
+      "camera_enabled": {
+        "name": "Camera enabled"
+      },
+      "microphone": {
+        "name": "Microphone"
+      },
+      "wide_dynamic_range": {
+        "name": "Wide dynamic range"
+      }
+    },
+    "sensor": {
+      "wifi_signal": {
+        "name": "WiFi signal"
+      },
+      "sd_total": {
+        "name": "SD card size"
+      },
+      "sd_free": {
+        "name": "SD card free"
+      },
+      "sd_status": {
+        "name": "SD card status",
+        "state": {
+          "no_card": "No card",
+          "normal": "Normal",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      }
+    },
+    "camera": {
+      "main_stream": {
+        "name": "Main stream"
+      },
+      "sub_stream": {
+        "name": "Sub stream"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ up"
+      },
+      "ptz_down": {
+        "name": "PTZ down"
+      },
+      "ptz_left": {
+        "name": "PTZ left"
+      },
+      "ptz_right": {
+        "name": "PTZ right"
+      }
+    },
+    "media_player": {
+      "speaker": {
+        "name": "Speaker"
+      }
+    },
+    "text": {
+      "video_name": {
+        "name": "Name on video"
+      }
+    }
+  },
+  "services": {
+    "ptz": {
+      "name": "PTZ",
+      "description": "Move, stop or switch lens.",
+      "fields": {
+        "action": {
+          "name": "Action",
+          "description": "left/right/up/down to move, stop, or wide/tele to switch lens."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "0 keeps moving until stop (for press-and-hold); more than 0 moves that long, then stops."
+        }
+      }
+    }
+  }
+}

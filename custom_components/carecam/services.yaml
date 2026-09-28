@@ -1,0 +1,19 @@
+ptz:
+  target:
+    entity:
+      integration: carecam
+      domain: camera
+  fields:
+    action:
+      required: true
+      selector:
+        select:
+          options: [left, right, up, down, stop, wide, tele]
+    duration:
+      default: 0
+      selector:
+        number:
+          min: 0
+          max: 30
+          step: 0.1
+          unit_of_measurement: s

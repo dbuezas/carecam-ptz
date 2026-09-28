@@ -1,0 +1,5 @@
+{
+  "name": "CareCam PTZ",
+  "render_readme": true,
+  "homeassistant": "2025.10.0"
+}

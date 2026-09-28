@@ -1,0 +1,5 @@
+SETUP.txt
+decode/uploads/
+__pycache__/
+*.pyc
+.DS_Store
